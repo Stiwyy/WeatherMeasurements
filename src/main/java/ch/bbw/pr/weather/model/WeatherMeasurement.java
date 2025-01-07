@@ -5,6 +5,7 @@ import java.util.List;
 import lombok.Setter;
 import lombok.Getter;
 
+//Automatisch Setter + Getter (spahrt Zeit + ist übersichtlicher)
 @Getter
 @Setter
 public class WeatherMeasurement {

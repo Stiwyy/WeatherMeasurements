@@ -16,11 +16,17 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 /**
  *
  * @author Andrin Renggli
- * @version 11.12.2024
+ * @version 7.1.2024
  */
+
+//Funktioniert wieder fast gleich wie die anderen Varianten.
+//Der Unterschied liegt darin, dass wir hier POJOs verwenden.
+//POJOs sind Measurement.java, Station.Java, WeatherMeasurement.java also das was wir schon kennen.
 public class App {
     public static void main(String[] args) {
         System.out.println("Hello Weather");
+
+        //Formatiert POJOs richtig für MongoDB
         CodecProvider pojoCodecProvider = PojoCodecProvider.builder().register("ch.bbw.pr.weather.model").build();
         CodecRegistry pojoCodecRegistry = fromRegistries(com.mongodb.MongoClient.getDefaultCodecRegistry(), fromProviders(pojoCodecProvider));
         String connectionString = "mongodb://root:1234@localhost:27017";
